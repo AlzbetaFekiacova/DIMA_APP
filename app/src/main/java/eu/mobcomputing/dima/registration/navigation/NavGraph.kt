@@ -14,6 +14,7 @@ import eu.mobcomputing.dima.registration.models.Recipe
 import eu.mobcomputing.dima.registration.screens.AddIngredientToPantry
 import eu.mobcomputing.dima.registration.screens.HomeScreen
 import eu.mobcomputing.dima.registration.screens.LogInScreen
+import eu.mobcomputing.dima.registration.screens.NoInternetConnectionScreen
 import eu.mobcomputing.dima.registration.screens.PantryScreen
 import eu.mobcomputing.dima.registration.screens.ProfileScreen
 import eu.mobcomputing.dima.registration.screens.RecipeDetailScreen
@@ -153,8 +154,9 @@ fun SetUpNavGraph(navController: NavHostController) {
             }
         }
 
-
-
+        composable(route = Screen.NoInternetConnection.route){
+            NoInternetConnectionScreen(navController = navController)
+        }
     }
 
 }

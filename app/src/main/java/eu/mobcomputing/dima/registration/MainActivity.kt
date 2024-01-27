@@ -72,6 +72,7 @@ class MainActivity : ComponentActivity() {
         )
 
         super.onCreate(savedInstanceState)
+        ContextManager.initialize(applicationContext)
         setContent {
             RegistrationTheme {
                 navController = rememberNavController()
