@@ -35,8 +35,9 @@ import eu.mobcomputing.dima.registration.components.MyImageComponent
 import eu.mobcomputing.dima.registration.components.MyPasswordFieldComponent
 import eu.mobcomputing.dima.registration.components.MyTextFieldComponent
 import eu.mobcomputing.dima.registration.components.NormalTextComponent
+import eu.mobcomputing.dima.registration.navigation.Screen
 import eu.mobcomputing.dima.registration.uiEvents.RegistrationUIEvent
-import eu.mobcomputing.dima.registration.viewmodels.RegistrationViewModel
+import eu.mobcomputing.dima.registration.viewmodels.SignUpViewModel
 
 /**
  * Composable function representing the SignUp screen of the application.
@@ -46,7 +47,7 @@ import eu.mobcomputing.dima.registration.viewmodels.RegistrationViewModel
  */
 @Composable
 fun SignUpScreen(
-    navController: NavController, registrationViewModel: RegistrationViewModel = hiltViewModel(),
+    navController: NavController, registrationViewModel: SignUpViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
     BoxWithConstraints(
@@ -86,7 +87,7 @@ fun SignUpScreen(
 @Composable
 fun SmallRegistrationScreen(
     navController: NavController,
-    registrationViewModel: RegistrationViewModel,
+    registrationViewModel: SignUpViewModel,
     context: Context
 ) {
     Column(
@@ -178,7 +179,7 @@ fun SmallRegistrationScreen(
         Spacer(modifier = Modifier.height(10.dp))
         NormalTextComponent(value = stringResource(id = R.string.or))
         ClickableRegisterTextComponent(onClickAction = {
-            registrationViewModel.redirectToLogInScreen(navController)
+            redirectToLogInScreen(navController)
         })
     }
 
@@ -198,7 +199,7 @@ fun SmallRegistrationScreen(
 @Composable
 fun WideRegistrationScreen(
     navController: NavController,
-    registrationViewModel: RegistrationViewModel,
+    registrationViewModel: SignUpViewModel,
     context: Context
 ) {
     Row(
@@ -303,7 +304,7 @@ fun WideRegistrationScreen(
                 })
             NormalTextComponent(value = stringResource(id = R.string.or))
             ClickableRegisterTextComponent(onClickAction = {
-                registrationViewModel.redirectToLogInScreen(navController)
+                redirectToLogInScreen(navController)
             })
         }
 
@@ -313,6 +314,10 @@ fun WideRegistrationScreen(
     }
 }
 
+fun redirectToLogInScreen(navController: NavController) {
+    navController.navigate(route = Screen.LogIn.route)
+
+}
 
 /**
  * Preview annotation for previewing the SignUpScreen in Android Studio.

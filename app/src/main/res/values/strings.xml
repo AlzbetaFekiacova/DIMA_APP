@@ -39,4 +39,11 @@
     <string name="here_is_all_the_information_i_know_about_you">Here is all the information I know about you</string>
     <string name="connection_not_available">Connection not available.</string>
     <string name="i_need_conection_txt">"I need internet connection for showing you available recipes and other functions, please connect me to internet and reload. "</string>
+    <string name="error_fetching">Error Fetching User</string>
+    <string name="canceled">Operation Canceled</string>
+    <string name="user_created">User Created Successfully</string>
+    <string name="error_creating">Error Creating User</string>
+
+
+
 </resources>
